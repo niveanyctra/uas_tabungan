@@ -1,0 +1,818 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*************************************************
+**************************************************
+
+
+Color Guide
+***************
+
+
+*************************************************
+
+Type Guide
+***************
+
+
+Debugging Tools
+***************
+border: 1px solid #fff;
+
+*************************************************/
+
+/************************************************
+*************************************************
+0. CSS Reset ------------------------ 
+1. Universal Styles -----------------
+2. Header & Nav Styles -------------- 
+3. Main Body Styles ----------------- 
+4. Sidebar Styles ------------------- 
+5. Widget Styles --------------------
+6. Footer Styles -------------------- 
+7. Comments & Form Styles ----------- 
+8. Generic Styles ----------- 
+*************************************************
+************************************************/
+
+/*----------------------------------------------
+------------------------------------------------
+0. CSS Reset
+------------------------------------------------
+----------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*----------------------------------------------
+------------------------------------------------
+1. Universal Styles
+------------------------------------------------
+----------------------------------------------*/
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #eaeaea;
+}
+.container {
+    padding: 0 50px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+:root {
+    --primary-color: rgb(46, 175, 255);
+}
+/*----------------------------------------------
+------------------------------------------------
+2. Header & Nav Styles
+------------------------------------------------
+----------------------------------------------*/
+.header .navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px 40px;
+    border-radius: 0 0 20px 20px;
+    align-items: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.header .navbar .nav-logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.header .navbar .nav .nav-list {
+    display: inline-block;
+    padding: 0 20px;
+}
+.header .navbar .nav .nav-list .nav-item {
+    font-size: 20px;
+    font-weight: 600;
+}
+.nav ul li a {
+    position: relative;
+}
+.nav ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: ".";
+    color: transparent;
+    background: #000000;
+    height: 1px;
+    transition: all 0.5s ease;
+}
+.nav ul li a:hover:after {
+    width: 100%;
+}
+/*----------------------------------------------
+------------------------------------------------
+3. Main Body Styles
+------------------------------------------------
+----------------------------------------------*/
+.content {
+    min-height: 100vh;
+}
+.category {
+    margin-top: 30px;
+    display: flex; /* Menampilkan elemen dalam satu baris */
+    gap: 16px; /* Jarak antar elemen */
+    overflow-x: hidden; /* Scroll hanya horizontal */
+    overflow-y: hidden; /* Mencegah scroll vertikal */
+    padding: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+    overscroll-behavior-x: contain; /* Mencegah scroll bocor */
+    scroll-behavior: auto;
+}
+
+.category::-webkit-scrollbar {
+    height: 8px; /* Tinggi scrollbar */
+}
+
+.category::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.category .card {
+    flex: 0 0 auto; /* Mencegah elemen menyusut */
+    width: fit-content; /* Lebar tetap untuk setiap kategori */
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    transition: transform 0.3s ease;
+}
+
+.category .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.category .card-body {
+    font-size: 1rem;
+    color: #000000;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.category .card-body .action {
+    display: grid;
+    gap: 5px;
+}
+.category .ctg_btn {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.landing {
+    padding: 100px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.landing .greetings {
+    width: 50%;
+}
+.landing .greetings h1 {
+    font-size: 50px;
+}
+.landing .greetings p {
+    font-size: 20px;
+}
+.landing-image {
+    width: 30%;
+}
+
+.tabungan {
+    padding: 100px 0;
+    margin-top: 30px;
+}
+
+.tabungan h2 {
+    text-align: center;
+}
+
+.fitur {
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.fitur .card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+.fitur .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.fitur .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.fitur .card-body {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.setor {
+    padding: 20px 100px 100px 100px;
+}
+.setor .card {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 50px 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+.setor .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.setor .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.setor .card-body {
+    font-size: 1rem;
+    color: #000;
+    line-height: 1.5;
+}
+
+.setor .card-body .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.setor .card-body .header h1 span {
+    color: var(--primary-color);
+}
+
+.setor .card-body .header .saldo {
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.setor .card-body form {
+    margin-top: 50px;
+}
+
+.setor .card-body .form-input {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 17px;
+}
+
+.setor .card-body .input-group {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.setor .card-body .input-group .form-select {
+    width: 80%;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 20px 0 0 20px;
+    font-size: 17px;
+}
+.setor .card-body .input-group .form-btn {
+    width: 20%;
+    height: 50px;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 0 20px 20px 0;
+    color: #fff;
+    font-weight: 600;
+}
+.setor .card-body .form-btn {
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 220px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.setor .modal .form-input {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 17px;
+}
+.setor .modal .form-btn {
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 220px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.tarik {
+    padding: 20px 100px 100px 100px;
+}
+.tarik .card {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 50px 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+.tarik .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tarik .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.tarik .card-body {
+    font-size: 1rem;
+    color: #000;
+    line-height: 1.5;
+}
+
+.tarik .card-body .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tarik .card-body .header h1 span {
+    color: var(--primary-color);
+}
+
+.tarik .card-body .header .saldo {
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.tarik .card-body form {
+    margin-top: 50px;
+}
+
+.tarik .card-body .form-input {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 17px;
+}
+
+.tarik .card-body .form-select {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 17px;
+}
+.tarik .card-body .form-btn {
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 220px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.history {
+    padding: 100px 100px;
+}
+.history .card {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 50px 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+.history .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.history .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.history .card-body {
+    font-size: 1rem;
+    color: #000;
+    line-height: 1.5;
+}
+
+.history .card-body .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.history .card-body .header h1 span {
+    color: var(--primary-color);
+}
+
+.history .card-body .header .saldo {
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.history .card-body form {
+    margin-top: 50px;
+}
+
+.history .riwayat {
+    margin-top: 20px;
+}
+.history .riwayat .jenis {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.jenis .jumlah {
+    font-weight: 600;
+}
+.history .riwayat .jenis.income .jumlah {
+    color: rgb(11, 159, 0);
+    padding: 0;
+}
+.history .riwayat .jenis.expense .jumlah {
+    color: rgb(255, 29, 67);
+    padding: 0;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login h2 {
+    margin: 0 0 20px 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.login .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.login .form-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.login .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login .form-group input:focus {
+    border-color: #4facfe;
+    outline: none;
+}
+
+.login .form-group button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background: #4facfe;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login .form-group button:hover {
+    background: #009ee2;
+}
+
+.login .form-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.login .form-footer a {
+    color: #4facfe;
+    text-decoration: none;
+}
+
+.login .form-footer a:hover {
+    text-decoration: underline;
+}
+
+.register-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.register {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.register h2 {
+    margin: 0 0 20px 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.register .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.register .form-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.register .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.register .form-group input:focus {
+    border-color: #4facfe;
+    outline: none;
+}
+
+.register .form-group button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background: #4facfe;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.register .form-group button:hover {
+    background: #009ee2;
+}
+
+.register .form-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.register .form-footer a {
+    color: #4facfe;
+    text-decoration: none;
+}
+
+.register .form-footer a:hover {
+    text-decoration: underline;
+}
+
+/*----------------------------------------------
+------------------------------------------------
+4. Sidebar Styles
+------------------------------------------------
+----------------------------------------------*/
+
+/*----------------------------------------------
+------------------------------------------------
+5. Widget Styles
+------------------------------------------------
+----------------------------------------------*/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: absolute;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    height: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    align-items: center;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body {
+    padding: 20px 40px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+}
+/*----------------------------------------------
+------------------------------------------------
+6. Footer Styles
+------------------------------------------------
+----------------------------------------------*/
+footer {
+    padding: 30px 100px;
+    background-color: #333;
+    color: #ddd;
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+/*----------------------------------------------
+------------------------------------------------
+7. Comments & Form Styles
+------------------------------------------------
+----------------------------------------------*/
+
+/*----------------------------------------------
+------------------------------------------------
+8. Generic Styles
+------------------------------------------------
+----------------------------------------------*/
