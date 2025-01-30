@@ -10,10 +10,10 @@
     <div class="register-container">
         <div class="register">
             <h2>Register</h2>
-            <form action="#" method="post">
+            <form action="../../controller/register.php" method="post">
                 <div class="form-group">
-                    <label for="fullname">Full Name</label>
-                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 </div>
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -28,15 +28,15 @@
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
                 <div class="form-group">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
                 </div>
                 <div class="form-group">
                     <button type="submit">Register</button>
                 </div>
             </form>
             <div class="form-footer">
-                <p>Already have an account? <a href="login.html">Login</a></p>
+                <p>Already have an account? <a href="login.php">Login</a></p>
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@
     <div class="login-container">
         <div class="login">
             <h2>Login</h2>
-            <form action="../controller/auth.php" method="post">
+            <form action="../../controller/auth.php" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" placeholder="Enter your username" required>
@@ -24,7 +24,7 @@
                 </div>
             </form>
             <div class="form-footer">
-                <p>Don't have an account? <a href="register.html">Sign up</a></p>
+                <p>Don't have an account? <a href="register.php">Sign up</a></p>
             </div>
         </div>
     </div>

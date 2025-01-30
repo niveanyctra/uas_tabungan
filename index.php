@@ -1,3 +1,8 @@
+<?php
+include "config.php";
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,28 +19,38 @@
                     <nav class="nav">
                         <ul>
                             <li class="nav-list">
-                                <a href="./index.html" class="nav-item">Home</a>
+                                <a href="./index.php" class="nav-item">Home</a>
                             </li>
                             <li class="nav-list">
-                                <a href="./pages/setor.html" class="nav-item"
+                                <a href="./pages/setor.php" class="nav-item"
                                     >Setor</a
                                 >
                             </li>
                             <li class="nav-list">
-                                <a href="./pages/tarik.html" class="nav-item"
+                                <a href="./pages/tarik.php" class="nav-item"
                                     >Tarik</a
                                 >
                             </li>
                             <li class="nav-list">
-                                <a href="./pages/history.html" class="nav-item"
+                                <a href="./pages/history.php" class="nav-item"
                                     >History</a
                                 >
                             </li>
-                            <li class="nav-list">
-                                <a href="./pages/auth/login.html" class="nav-item"
-                                    >Login</a
-                                >
-                            </li>
+                            <?php 
+                            if (!isset($_SESSION['username'])) {
+                                echo '<li class="nav-list">
+                                    <a href="./pages/auth/login.php" class="nav-item"
+                                        >Login</a
+                                    >
+                                </li>';
+                            } else {
+                                echo '<li class="nav-list">
+                                    <a href="./controller/logout.php" class="nav-item" style="color:red;"
+                                        >Logout</a
+                                    >
+                                </li>';
+                            }
+                            ?>
                         </ul>
                     </nav>
                 </div>
@@ -64,7 +79,7 @@
                 <div class="tabungan">
                     <h2>Fitur-fitur</h2>
                     <div class="fitur">
-                        <a href="./pages/setor.html">
+                        <a href="./pages/setor.php">
                             <div class="card">
                                 <h5 class="card-title">Setor</h5>
                                 <div class="card-body">
@@ -76,7 +91,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="./pages/tarik.html">
+                        <a href="./pages/tarik.php">
                             <div class="card">
                                 <h5 class="card-title">Tarik</h5>
                                 <div class="card-body">
@@ -88,7 +103,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="./pages/history.html">
+                        <a href="./pages/history.php">
                             <div class="card">
                                 <h5 class="card-title">History</h5>
                                 <div class="card-body">
